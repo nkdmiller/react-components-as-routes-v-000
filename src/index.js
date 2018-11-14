@@ -15,7 +15,7 @@ const About = () => {
     </div>
   );
 };
- 
+
 const Login = () => {
   return (
     <div>
@@ -35,7 +35,11 @@ const Login = () => {
 };
 ReactDOM.render((
   <Router>
-    <Route path="/" render={Home} />
+    <React.Fragment>
+      <Route path="/" render={Home} />
+      <Route exact path="/about" render={About} />
+      <Route exact path="/login" render={Login} />
+    </React.Fragment>
   </Router>),
   document.getElementById('root')
 );
